@@ -22,7 +22,7 @@ router.post('/'
             if(user_exist){
                 return res.status(400).json({
                     status:'registration Failed',
-                    message:'Email is Already Existed',
+                    message:'username is Already Existed',
                   
 
                 })
