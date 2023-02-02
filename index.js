@@ -22,7 +22,9 @@ mongoose.connect("mongodb://localhost/todosvinitha",{
   })
     .then(() => console.log('mongoose is connected...'))
     .catch((err) => console.log(err))
-
+app.get('/',async(req,res)=>{
+      res.send("hello")
+  })
 
 
 app.use('/v1/register', register)
