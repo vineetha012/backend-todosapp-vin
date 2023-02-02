@@ -14,9 +14,10 @@ app.use(cors())
 let port = process.env.PORT || 5000
 const secret = process.env.SECRET;
 let mongoUri = process.env.MONGO
+//"mongodb://localhost/todosvinitha"
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-mongoose.connect("mongodb://localhost/todosvinitha",{
+mongoose.connect(mongoUri,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
