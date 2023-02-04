@@ -12,10 +12,9 @@ router.post('/', async (req, res) => {
        
         const userExist = await User.findOne({ username: username })
         if (!userExist) {
-            return res.status(400).json({
-                status: 'Failed',
-                message: 'User is not exist'
-            })
+            return res.status(400).send(
+                'User is not exist'
+            )
         }
         const comparing = await bcrypt.compare(password, userExist.password)
         console.log(comparing);
